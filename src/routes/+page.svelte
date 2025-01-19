@@ -109,7 +109,20 @@
 		sounds.collect.play();
 		tiles = [];
 		gameSession = null;
+		tilesSelected = [];
+		multiplier = 0;
+		nextMultiplier = 0;
 		balance = balance + data.profit;
+	};
+
+	const pickRandom = () => {
+		const availableTiles = tiles.reduce((acc, tile, index) => {
+			if (!tile.revealed) acc.push(index);
+			return acc;
+		}, []);
+		if (availableTiles.length === 0) return;
+		const randomIndex = availableTiles[Math.floor(Math.random() * availableTiles.length)];
+		reveal(randomIndex);
 	};
 
 	const parseTiles = (tiles) => {
@@ -128,7 +141,7 @@
 		<p class="text-zinc-500">Because casino's are scam</p>
 	</div>
 	<div class="grid grid-cols-[2fr,5fr] gap-5">
-		<div class="max-w-lg w-full rounded-2xl p-5 bg-zinc-800 flex flex-col gap-5">
+		<div class="max-w-lg w-full rounded-2xl p-5 bg-zinc-800 flex flex-col gap-3">
 			<div class="space-y-2">
 				<p>Mines:</p>
 				<MinesSelector bind:selected={minesCount} disabled={gameSession?.in_progress} />
@@ -137,18 +150,31 @@
 				<p>Bet:</p>
 				<Bet bind:bet disabled={gameSession?.in_progress} />
 			</div>
-			<Balance amount={balance} />
+			<div class="space-y-2">
+				<Balance amount={balance} />
+				<a href="/redeem" class="text-xs block text-zinc-400 text-right hover:opacity-50"
+					>Redeem code</a
+				>
+			</div>
 			<Profit amount={bet * multiplier} {multiplier} />
 			{#if nextMultiplier}
 				<Profit label="Next profit" amount={bet * nextMultiplier} multiplier={nextMultiplier} />
 			{/if}
 			<div class="mt-auto space-y-2.5">
+				{#if gameSession?.in_progress}
+					<button
+						class="block p-2.5 bg-blue-600 w-full rounded-lg disabled:pointer-events-none disabled:bg-zinc-700/25 disabled:text-zinc-500"
+						onclick={pickRandom}
+					>
+						Pick random
+					</button>
+				{/if}
 				{#if gameSession?.in_progress && tilesSelected.length > 0}
 					<button
 						class="block p-2.5 bg-green-600 w-full rounded-lg disabled:pointer-events-none disabled:bg-zinc-700/25 disabled:text-zinc-500"
 						onclick={collect}
 					>
-						Collect
+						Collect {(Math.floor(bet * multiplier * 100) / 100).toFixed(2)}
 					</button>
 				{:else}
 					<button

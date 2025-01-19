@@ -3,8 +3,8 @@ export const calculateMultiplier = (revealedTiles, totalTiles, mines) => {
 
 	// Neue Parameter für exaktes Wachstum
 	const baseMultiplier = 0.97; // Startwert des Multiplikators
-	const growthRate = 1.1; // Wachstum pro Fortschritt
-	const scalingFactor = 4; // Verstärkt exponentielles Wachstum
+	const growthRate = 1.2; // Wachstum pro Fortschritt
+	const scalingFactor = 4.5; // Verstärkt exponentielles Wachstum
 
 	// Fortschritt der sicheren Felder
 	const progress = revealedTiles / safeTiles;

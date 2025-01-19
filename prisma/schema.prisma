@@ -36,3 +36,12 @@ model GameSession {
   tiles_selected String
   in_progress    Boolean @default(false)
 }
+
+model Code {
+  id        String   @id @default(cuid())
+  code      String   @unique
+  amount    Float
+  used      Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

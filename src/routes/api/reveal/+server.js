@@ -60,9 +60,9 @@ export const POST = async ({ request, locals }) => {
 
 		profit = gameSession.bet * multiplier;
 
-		const newBalance = await prism.user.update({
+		const newBalance = await prisma.user.update({
 			where: { id: user.id },
-			data: { balance: user.balance + payout }
+			data: { balance: user.balance + profit }
 		});
 	}
 

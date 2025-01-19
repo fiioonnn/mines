@@ -6,11 +6,15 @@
 	let { selected = $bindable(), disabled } = $props();
 </script>
 
-<div class="flex rounded-lg overflow-hidden">
+<div class="grid grid-cols-4 rounded-lg overflow-hidden">
 	{@render button(1)}
 	{@render button(3)}
 	{@render button(5)}
+	{@render button(7)}
 	{@render button(10)}
+	{@render button(15)}
+	{@render button(20)}
+	{@render button(24)}
 </div>
 
 {#snippet button(amount)}
