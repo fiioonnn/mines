@@ -14,6 +14,9 @@ COPY . .
 # Set environment variable for database
 ENV DATABASE_URL="file:./prisma/dev.db"
 
+# Remove existing database to ensure fresh start
+RUN rm -f prisma/dev.db
+
 # Generate Prisma client
 RUN npx prisma generate
 
