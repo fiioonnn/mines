@@ -6,21 +6,21 @@ export const handle = async ({ event, resolve }) => {
 	const session = event.cookies.get('session');
 	const pathname = event.url.pathname;
 
-	if (!session && pathname !== '/login') {
-		return redirect(302, '/login');
+	if (!session && pathname !== `${base}/login`) {
+		return redirect(302, `${base}/login`);
 	}
 
-	if (session && pathname === '/login') {
-		return redirect(302, '/');
+	if (session && pathname === `${base}/login`) {
+		return redirect(302, base || '/');
 	}
 
 	const user = await validateSession(session);
 
-	if (!user && pathname !== '/login') {
+	if (!user && pathname !== `${base}/login`) {
 		event.cookies.delete('session', {
 			path: '/'
 		});
-		return redirect(302, '/login');
+		return redirect(302, `${base}/login`);
 	}
 
 	if (user) {

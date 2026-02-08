@@ -8,6 +8,7 @@
 	import { onMount } from 'svelte';
 	import Profit from '$lib/components/Profit.svelte';
 	import { mine, tile, click, collect as collectSound } from '$lib/assets';
+	import { base } from '$app/paths';
 
 	let { data } = $props();
 
@@ -152,7 +153,7 @@
 			</div>
 			<div class="space-y-2">
 				<Balance amount={balance} />
-				<a href="/redeem" class="text-xs block text-zinc-400 text-right hover:opacity-50"
+				<a href={`${base}/login`} class="text-xs block text-zinc-400 text-right hover:opacity-50"
 					>Redeem code</a
 				>
 			</div>
