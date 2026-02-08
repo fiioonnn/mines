@@ -153,7 +153,7 @@
 			</div>
 			<div class="space-y-2">
 				<Balance amount={balance} />
-				<a href={`${base}/login`} class="text-xs block text-zinc-400 text-right hover:opacity-50"
+				<a href={`${base}/redeem`} class="text-xs block text-zinc-400 text-right hover:opacity-50"
 					>Redeem code</a
 				>
 			</div>

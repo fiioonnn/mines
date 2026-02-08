@@ -1,5 +1,6 @@
 import { error, fail } from '@sveltejs/kit';
 import { prisma } from '$lib/server/prisma';
+import { base } from '$app/paths';
 
 export const actions = {
 	default: async ({ request, cookies }) => {
@@ -27,7 +28,7 @@ export const actions = {
 		});
 
 		cookies.set('session', session.id, {
-			path: '/',
+			path: `${base}/`,
 			httpOnly: true,
 			maxAge: 60 * 60 * 24 * 7 // 1 week
 		});
