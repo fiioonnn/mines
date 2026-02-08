@@ -23,8 +23,14 @@ RUN npx prisma db push
 # Seed the database
 RUN npm run db:seed
 
+# Build the application
+RUN npm run build
+
+# Set environment variable for port
+ENV PORT=5173
+
 # Expose the port
 EXPOSE 5173
 
-# Start the development server
-CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+# Start the production server
+CMD ["node", "build/index.js"]
