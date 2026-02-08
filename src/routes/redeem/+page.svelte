@@ -15,7 +15,7 @@
 	<div class="flex flex-col items-center relative">
 		<Icon icon="noto:bomb" class="size-20 absolute -top-5 -z-10" />
 		<h1 class="text-7xl font-bold uppercase tracking-widest text-center shadow-md">Mines</h1>
-		<p class="text-zinc-500">Because casino's are scam</p>
+		<p class="text-zinc-500"><Canvas></Canvas>asino's are scam</p>
 	</div>
 
 	<form class="flex flex-col gap-5" method="POST" use:enhance>

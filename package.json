@@ -8,7 +8,8 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"format": "prettier --write .",
-		"lint": "prettier --check ."
+		"lint": "prettier --check .",
+		"db:seed": "prisma db seed"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^4.0.0",
@@ -28,5 +29,8 @@
 		"howler": "^2.2.4",
 		"prisma": "^6.2.1",
 		"sqlite": "^5.1.1"
+	},
+	"prisma": {
+		"seed": "node prisma/seed.js"
 	}
 }

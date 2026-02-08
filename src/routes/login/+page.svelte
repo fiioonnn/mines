@@ -13,7 +13,7 @@
 	<div class="flex flex-col items-center relative">
 		<Icon icon="noto:bomb" class="size-20 absolute -top-5 -z-10" />
 		<h1 class="text-7xl font-bold uppercase tracking-widest text-center shadow-md">Mines</h1>
-		<p class="text-zinc-500">Because casino's are scam</p>
+		<p class="text-zinc-500">Casino's are scam</p>
 	</div>
 
 	<form class="flex flex-col gap-5" method="POST" use:enhance>
@@ -34,4 +34,9 @@
 		/>
 		<button class="bg-zinc-600 rounded-lg p-2.5 text-center focus:outline-none">Login</button>
 	</form>
+
+	<p class="text-zinc-400 text-center text-sm">
+		Demo account: username <code class="bg-zinc-700 px-1 rounded">demo</code>, password
+		<code class="bg-zinc-700 px-1 rounded">demo</code>
+	</p>
 </div>

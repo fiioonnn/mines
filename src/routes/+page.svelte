@@ -138,7 +138,7 @@
 	<div class="flex flex-col items-center relative">
 		<Icon icon="noto:bomb" class="size-20 absolute -top-5 -z-10" />
 		<h1 class="text-7xl font-bold uppercase tracking-widest text-center shadow-md">Mines</h1>
-		<p class="text-zinc-500">Because casino's are scam</p>
+		<p class="text-zinc-500">Casino's are scam</p>
 	</div>
 	<div class="grid grid-cols-[2fr,5fr] gap-5">
 		<div class="max-w-lg w-full rounded-2xl p-5 bg-zinc-800 flex flex-col gap-3">
